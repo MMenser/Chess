@@ -23,12 +23,13 @@ public:
 		this->x = newX;
 		this->y = newY;
 		this->color = newColor;
+		this->canTargetKing = false;
 	}
 
 	virtual void updateLegalMoves(int board[8][8]) = 0;
 
 	bool targetKing() {
-
+		return this->canTargetKing;
 	}
 
 	void setX(int newX) {
@@ -60,6 +61,7 @@ public:
 	}
 
 protected:
-	int x, y, color; 
+	int x, y, color;						//Color: 0 = white, 1 = black
 	std::vector<std::string> moves;
+	bool canTargetKing;
 };
