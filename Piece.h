@@ -25,7 +25,11 @@ public:
 		this->color = newColor;
 	}
 
-	virtual void updateLegalMoves() = 0;
+	virtual void updateLegalMoves(int board[8][8]) = 0;
+
+	bool targetKing() {
+
+	}
 
 	void setX(int newX) {
 		this->x = newX;
@@ -49,6 +53,10 @@ public:
 
 	int getColor() {
 		return this->color;
+	}
+
+	std::vector<std::string> returnMoves() {
+		return this->moves;
 	}
 
 protected:
