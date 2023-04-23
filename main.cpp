@@ -1,19 +1,4 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <chrono>
-#include <iomanip>
-#include <windows.h>
-#include <vector>
-
-
-using std::cin;
-using std::cout;
-using std::endl;
-
-using std::ifstream;
-using std::ofstream;
-using std::fstream;
+#include "Piece.h"
 
 int main(void) {
 
