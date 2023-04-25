@@ -42,7 +42,13 @@ public:
 			}
 			moveCheck - this->x + 1;
 			yMoveCheck = this->y + 1;
-			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] != 0) {
+			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] > 0) {
+				move = moveCheck + "," + yMoveCheck;
+				this->moves.push_back(move);
+			}
+			moveCheck - this->x + 1;
+			yMoveCheck = this->y - 1;
+			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] > 0) {
 				move = moveCheck + "," + yMoveCheck;
 				this->moves.push_back(move);
 			}
@@ -60,19 +66,21 @@ public:
 			}
 			moveCheck - this->x - 1;
 			yMoveCheck = this->y - 1;
-			if (moveCheck > -1 && yMoveCheck > -1 && board[moveCheck][yMoveCheck] != 0) {
+			if (moveCheck > -1 && yMoveCheck > -1 && board[moveCheck][yMoveCheck] < 0) {
 				move = moveCheck + "," + yMoveCheck;
 				this->moves.push_back(move);
 			}
 			moveCheck - this->x - 1;
 			yMoveCheck = this->y + 1;
-			if (moveCheck > -1 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] != 0) {
+			if (moveCheck > -1 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] < 0) {
 				move = moveCheck + "," + yMoveCheck;
 				this->moves.push_back(move);
 			}
 		}
-		
+	}
 
+	void firstMoveFalse() {
+		this->firstMove = false;
 	}
 
 private:

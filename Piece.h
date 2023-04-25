@@ -32,6 +32,10 @@ public:
 		return this->canTargetKing;
 	}
 
+	bool isValidPosition(int row, int col) {
+		return row >= 0 && row < 8 && col >= 0 && col < 8;
+	}
+
 	void setX(int newX) {
 		this->x = newX;
 	}
