@@ -4,7 +4,7 @@
 class King : public Piece {
 public:
 	King(int newX, int newY, int newColor) : Piece(newX, newY, newColor) {
-		std::string newMove = (this->x) + "," + this->y;
+		std::string newMove = to_string(this->x) + to_string(this->y);
 		this->moves.push_back(newMove);
 	}
 
@@ -23,12 +23,12 @@ public:
 			/////           This is Up Down moves   /////////////
 			moveCheck = this->x + 1;													    //one down 
 			if (moveCheck < 8 && board[this->x + 1][this->y] == 0 ) {
-				move = (this->x + 1) + "," + this->y;
+				move = to_string(this->x + 1) + to_string(this->y);
 				this->moves.push_back(move);
 			}
 			moveCheck = this->x - 1;													    //one up 
 			if (moveCheck >= 0 && board[this->x - 1][this->y] == 0) {
-				move = (this->x - 1) + "," + this->y;
+				move = to_string(this->x - 1) + to_string(this->y);
 				this->moves.push_back(move);
 			}
 			
@@ -36,12 +36,12 @@ public:
 			
 			moveCheck = this->y - 1;													    //one left
 			if (moveCheck >= 0 && board[this->x ][this->y-1] == 0) {
-				move = (this->x) + "," + (this->y -1);
+				move = to_string(this->x) + to_string(this->y -1);
 				this->moves.push_back(move);
 			}
 			moveCheck = this->y + 1;													    //one right
 			if (moveCheck < 8 && board[this->x][this->y+1] == 0) {
-				move = (this->x) + "," + (this->y + 1);
+				move = to_string(this->x) + to_string(this->y + 1);
 				this->moves.push_back(move);
 			}
 
@@ -52,14 +52,14 @@ public:
 			moveCheck - this->x + 1;
 			yMoveCheck = this->y + 1;
 			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] != 0) {    //right down diaganol
-				move = moveCheck + "," + yMoveCheck;
+				move = to_string(moveCheck) + to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 
 			moveCheck - this->x - 1;
 			yMoveCheck = this->y + 1;
 			if (moveCheck >= 0 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] != 0) {    //right up diaganol
-				move = moveCheck + "," + yMoveCheck;
+				move = to_string(moveCheck) + to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 
@@ -69,14 +69,14 @@ public:
 			moveCheck = this->x - 1;
 			yMoveCheck = this->y - 1;
 			if (moveCheck >= 0  && yMoveCheck >= 0 && board[moveCheck][yMoveCheck] != 0) {    //left up diaganol
-				move = moveCheck + "," + yMoveCheck;
+				move = to_string(moveCheck) + to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 			
 			moveCheck - this->x + 1;
 			yMoveCheck = this->y - 1;
 			if (moveCheck < 8 && yMoveCheck >= 0 && board[moveCheck][yMoveCheck] != 0) {    // left down diaganol
-				move = moveCheck + "," + yMoveCheck;
+				move = to_string(moveCheck) + to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 
