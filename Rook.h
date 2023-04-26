@@ -15,11 +15,14 @@ public:
 
 
 		calculatePossibleMoves(newX, newY);
+		printMoves();
+		
+		
 	}
 
 
 
-	void calculatePossibleMoves(int row, int col)
+	void calculatePossibleMoves(int row, int col) 
 	{
 		this->moves.clear();
 
@@ -27,12 +30,12 @@ public:
 		int col_moves[] = { 0, 1, 0, -1 };
 
 		std::string temp = "";
-
+		
 		for (int i = 0; i < 4; i++) {
 			int newRow = row + row_moves[i];
 			int newCol = col + col_moves[i];
 
-			while (isValidPosition(newRow, newCol))
+			while (isValidPosition(newRow, newCol)) 
 			{
 				temp = std::to_string(newRow) + "," + std::to_string(newCol);
 				moves.push_back(temp);
@@ -51,3 +54,5 @@ public:
 
 private:
 };
+
+

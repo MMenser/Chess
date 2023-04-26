@@ -9,11 +9,12 @@ public:
 
 	Bishop(int newX, int newY, int newColor) : Piece(newX, newY, newColor)
 	{
-
+		
 		std::string newMove = (this->x) + "," + this->y;
 		this->moves.push_back(newMove);
 
 		calculatePossibleMoves(newX, newY);
+		printMoves();
 
 	}
 
@@ -30,7 +31,7 @@ public:
 			int newRow = row + row_moves[i];
 			int newCol = col + col_moves[i];
 
-			while (isValidPosition(newRow, newCol))
+			while (isValidPosition(newRow, newCol)) 
 			{
 				temp = std::to_string(newRow) + "," + std::to_string(newCol);
 				this->moves.push_back(temp);
@@ -50,3 +51,4 @@ public:
 
 private:
 };
+
