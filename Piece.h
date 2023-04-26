@@ -7,6 +7,7 @@
 #include <iomanip>
 #include <windows.h>
 #include <vector>
+#include <SFML/Window.hpp>
 
 
 using std::cin;
@@ -26,7 +27,7 @@ public:
 		this->canTargetKing = false;
 	}
 
-	virtual void updateLegalMoves(int board[8][8]) = 0;
+	virtual void updateLegalMoves(int board[8][8]) {};
 
 	bool targetKing() {
 		return this->canTargetKing;

@@ -42,8 +42,8 @@ public:
 
 			//////////////////////////////////////////////////////// This is Down move   /////////////
 
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 
 			do
@@ -63,8 +63,8 @@ public:
 
 			//////////////////////////////////////////////////////   This is Up Move   //////////////
 
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 			do
 			{
@@ -84,8 +84,8 @@ public:
 			///////////////////////////////////////////////////////   This is Left moves   ////////////
 
 
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 			do
 			{
@@ -105,8 +105,8 @@ public:
 			////////////////////////////////////////////////////////   This is Right moves   ////////////
 
 
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 			do
 			{
@@ -124,8 +124,8 @@ public:
 
 
 			/////////////////////////////////////////////////////////   Right Down Diagonal Moves    ////////////
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 
 			do
@@ -146,8 +146,8 @@ public:
 			} while (temp_y < 8 || temp_x < 8 || board[temp_x][temp_y] == 0);
 
 			/////////////////////////////////////////////////////////   Right Up Diagonal Moves    ////////////
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 
 			do
@@ -168,8 +168,8 @@ public:
 			} while (temp_y < 8 || temp_x >= 0 || board[temp_x][temp_y] == 0);
 
 			/////////////////////////////////////////////////////////   Left UP Diagonal Moves       //////////
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 
 			do
@@ -192,8 +192,8 @@ public:
 
 
 			/////////////////////////////////////////////////////////   Left  Down Diagonal Moves       //////////
-			int temp_x = this->x;
-			int temp_y = this->y;
+			temp_x = this->x;
+			temp_y = this->y;
 
 
 			do
@@ -226,8 +226,8 @@ public:
 
 		//////////////////////////////////////////////////////// This is Down move   /////////////
 
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 
 		do
@@ -249,8 +249,8 @@ public:
 
 		//////////////////////////////////////////////////////   This is Up Move   //////////////
 
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 		do
 		{
@@ -270,8 +270,8 @@ public:
 		///////////////////////////////////////////////////////   This is Left moves   ////////////
 
 
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 		do
 		{
@@ -291,8 +291,8 @@ public:
 		////////////////////////////////////////////////////////   This is Right moves   ////////////
 
 
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 		do
 		{
@@ -310,8 +310,8 @@ public:
 
 
 		/////////////////////////////////////////////////////////   Right Down Diagonal Moves    ////////////
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 
 		do
@@ -336,8 +336,8 @@ public:
 
 
 
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 
 		do
@@ -364,8 +364,8 @@ public:
 		/////////////////////////////////////////////////////////   Left UP Diagonal Moves       //////////
 
 
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 
 		do
@@ -391,8 +391,8 @@ public:
 
 
 
-		int temp_x = this->x;
-		int temp_y = this->y;
+		temp_x = this->x;
+		temp_y = this->y;
 
 
 		do

@@ -7,17 +7,25 @@ public:
 		this->firstMove = true;
 
 		if (color == 1) {
-			std::string newMove = (this->x + 2) + "," + this->y;
+			std::string newMove;
+			newMove += std::to_string(this->x + 2);
+			newMove += std::to_string(this->y);
 			this->moves.push_back(newMove);
 
-			newMove = (this->x + 1) + "," + this->y;
+			newMove = "";
+			newMove += std::to_string(this->x + 1);
+			newMove += std::to_string(this->y);
 			this->moves.push_back(newMove);
 		}
 		else {
-			std::string newMove = (this->x - 2) + "," + this->y;
+			std::string newMove;
+			newMove += std::to_string(this->x - 2);
+			newMove += std::to_string(this->y);
 			this->moves.push_back(newMove);
 
-			newMove = (this->x - 1) + "," + this->y;
+			newMove = "";
+			newMove += std::to_string(this->x - 1);
+			newMove += std::to_string(this->y);
 			this->moves.push_back(newMove);
 		}
 		
@@ -27,53 +35,68 @@ public:
 		this->moves.clear();
 
 		std::string move;
-		int moveCheck = 0, yMoveCheck;
+		int moveCheck = 0, yMoveCheck = 0;
 
 		if (color == 1) {				//Black
 			moveCheck = this->x + 2;
-			if (moveCheck < 8 && board[this->x + 2][this->y] == 0 && firstMove == true) {
-				move = (this->x + 2) + "," + this->y;
+			if (this->isValidPosition(moveCheck, this->y) && board[this->x + 2][this->y] == 0 && this->firstMove == true) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(this->y);
 				this->moves.push_back(move);
 			}
+			move = "";
 			moveCheck = this->x + 1;
-			if (moveCheck < 8 && board[this->x + 1][this->y] == 0) {
-				move = (this->x + 1) + "," + this->y;
+			if (this->isValidPosition(moveCheck, this->y) && board[this->x + 1][this->y] == 0) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(this->y);
 				this->moves.push_back(move);
 			}
+			move = "";
 			moveCheck - this->x + 1;
 			yMoveCheck = this->y + 1;
-			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] > 0) {
-				move = moveCheck + "," + yMoveCheck;
+			if (this->isValidPosition(moveCheck, yMoveCheck) && board[moveCheck][yMoveCheck] > 0) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
+			move = "";
 			moveCheck - this->x + 1;
 			yMoveCheck = this->y - 1;
-			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] > 0) {
-				move = moveCheck + "," + yMoveCheck;
+			if (this->isValidPosition(moveCheck, yMoveCheck) && board[moveCheck][yMoveCheck] > 0) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 		}
 		else {				//White 
+			move = "";
 			moveCheck = this->x - 2;
-			if (moveCheck > -1 && board[this->x - 2][this->y] == 0 && firstMove == true) {
-				move = (this->x - 2) + "," + this->y;
+			if (this->isValidPosition(moveCheck, this->y) && board[this->x - 2][this->y] == 0 && this->firstMove == true) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(this->y);
 				this->moves.push_back(move);
 			}
+			move = "";
 			moveCheck = this->x - 1;
-			if (moveCheck > -1 && board[this->x - 1][this->y] == 0) {
-				move = (this->x - 1) + "," + this->y;
+			if (this->isValidPosition(moveCheck, this->y) && board[this->x - 1][this->y] == 0) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(this->y);
 				this->moves.push_back(move);
 			}
+			move = "";
 			moveCheck - this->x - 1;
 			yMoveCheck = this->y - 1;
-			if (moveCheck > -1 && yMoveCheck > -1 && board[moveCheck][yMoveCheck] < 0) {
-				move = moveCheck + "," + yMoveCheck;
+			if (this->isValidPosition(moveCheck, yMoveCheck) && board[moveCheck][yMoveCheck] < 0) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
+			move = "";
 			moveCheck - this->x - 1;
 			yMoveCheck = this->y + 1;
-			if (moveCheck > -1 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] < 0) {
-				move = moveCheck + "," + yMoveCheck;
+			if (this->isValidPosition(moveCheck, yMoveCheck) && board[moveCheck][yMoveCheck] < 0) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 		}

@@ -66,7 +66,7 @@ public:
 			//////          Left  Diagonal Moves       //////////
 
 
-			moveCheck - this->x - 1;
+			moveCheck = this->x - 1;
 			yMoveCheck = this->y - 1;
 			if (moveCheck >= 0  && yMoveCheck >= 0 && board[moveCheck][yMoveCheck] != 0) {    //left up diaganol
 				move = moveCheck + "," + yMoveCheck;
