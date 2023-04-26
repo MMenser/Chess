@@ -21,7 +21,7 @@ class Queen : public Piece
 {
 public:
 	Queen(int newX, int newY, int newColor) : Piece(newX, newY, newColor) {
-		std::string newMove = (this->x) + "," + this->y;
+		std::string newMove = to_string(this->x) + to_string(this->y);
 		this->moves.push_back(newMove);
 	}
 
@@ -50,11 +50,11 @@ public:
 			{
 				temp_x = temp_x + 1;													    //down 
 				if (temp_x < 8 && board[temp_x][temp_y] == 0) {
-					move = (temp_x)+"," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 				else if (temp_x < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = (temp_x)+"," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -70,11 +70,11 @@ public:
 			{
 				temp_x = temp_x - 1;													    //up
 				if (temp_x >= 0 && board[temp_x][temp_y] == 0) {
-					move = (temp_x)+"," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 				else if (temp_x >= 0 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = (temp_x)+"," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -91,11 +91,11 @@ public:
 			{
 				temp_y = temp_y - 1;													    //left
 				if (temp_y >= 0 && board[temp_x][temp_y] == 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 				else if (temp_y >= 0 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -112,11 +112,11 @@ public:
 			{
 				temp_y = temp_y + 1;													    //Right
 				if (temp_y < 8 && board[temp_x][temp_y] == 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 				else if (temp_y < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -134,12 +134,12 @@ public:
 				temp_y = temp_y + 1;
 
 				if (temp_x < 8 && temp_y < 8 && board[temp_x][temp_y] != 0) {    //right down diaganol
-					move = temp_x + "," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
 				else if (temp_y < 8 && temp_x < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x)  + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -156,12 +156,12 @@ public:
 				temp_y = temp_y + 1;
 
 				if (temp_x >= 0 && temp_y < 8 && board[temp_x][temp_y] != 0) {    //right down diaganol
-					move = temp_x + "," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
 				else if (temp_x >= 0 && temp_y < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -178,12 +178,12 @@ public:
 				temp_y = temp_y - 1;
 
 				if (temp_x >= 0 && temp_y >= 0 && board[temp_x][temp_y] != 0) {    //right down diaganol
-					move = temp_x + "," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
 				else if (temp_x >= 0 && temp_y >= 0 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -202,12 +202,12 @@ public:
 				temp_y = temp_y - 1;
 
 				if (temp_y >= 0 && temp_x < 8 && board[temp_x][temp_y] != 0) {    //right down diaganol
-					move = temp_x + "," + temp_y;
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
 				else if (temp_y >= 0 && temp_x < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] < 0) {
-					move = temp_x + "," + (temp_y);
+					move = to_string(temp_x) + to_string(temp_y);
 					this->moves.push_back(move);
 				}
 
@@ -234,11 +234,11 @@ public:
 		{
 			temp_x = temp_x + 1;													    //down 
 			if (temp_x < 8 && board[temp_x][temp_y] == 0) {
-				move = (temp_x)+"," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 			else if (temp_x < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = (temp_x)+"," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
@@ -256,11 +256,11 @@ public:
 		{
 			temp_x = temp_x - 1;													    //up
 			if (temp_x >= 0 && board[temp_x][temp_y] == 0) {
-				move = (temp_x)+"," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 			else if (temp_x >= 0 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = (temp_x)+"," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
@@ -277,11 +277,11 @@ public:
 		{
 			temp_y = temp_y - 1;													    //left
 			if (temp_y >= 0 && board[temp_x][temp_y] == 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 			else if (temp_y >= 0 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
@@ -298,11 +298,11 @@ public:
 		{
 			temp_y = temp_y + 1;													    //Right
 			if (temp_y < 8 && board[temp_x][temp_y] == 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 			else if (temp_y < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
@@ -320,12 +320,12 @@ public:
 			temp_y = temp_y + 1;
 
 			if (temp_x < 8 && temp_y < 8 && board[temp_x][temp_y] != 0) {    //right down diaganol
-				move = temp_x + "," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
 			else if (temp_y < 8 && temp_x < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
@@ -346,12 +346,12 @@ public:
 			temp_y = temp_y + 1;
 
 			if (temp_x >= 0 && temp_y < 8 && board[temp_x][temp_y] != 0) {    //right down diaganol
-				move = temp_x + "," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
 			else if (temp_x >= 0 && temp_y < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
@@ -374,12 +374,12 @@ public:
 			temp_y = temp_y - 1;
 
 			if (temp_x >= 0 && temp_y >= 0 && board[temp_x][temp_y] != 0) {    //right down diaganol
-				move = temp_x + "," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
 			else if (temp_x >= 0 && temp_y >= 0 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
@@ -401,12 +401,12 @@ public:
 			temp_y = temp_y - 1;
 
 			if (temp_y >= 0 && temp_x < 8 && board[temp_x][temp_y] != 0) {    //right down diaganol
-				move = temp_x + "," + temp_y;
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
 			else if (temp_y >= 0 && temp_x < 8 && board[temp_x][temp_y] != 0 && board[temp_x][temp_y] > 0) {
-				move = temp_x + "," + (temp_y);
+				move = to_string(temp_x) + to_string(temp_y);
 				this->moves.push_back(move);
 			}
 
