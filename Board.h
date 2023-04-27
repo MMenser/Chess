@@ -141,6 +141,26 @@ public:
 		}
 	}
 
+	void updateIntArr(int boardIntArr[8][8]) {
+		int x = 0, y = 0;
+		for (int i = 0; i < 16; i++) {
+			x = this->getWhitePiece(i)->getX();
+			y = this->getWhitePiece(i)->getY();
+			if (x != -1) {
+				boardIntArr[x][y] = this->getWhitePiece(i)->getColor();			//Black pieces become 1
+			}
+
+		}
+		for (int i = 0; i < 16; i++) {
+			x = this->getBlackPiece(i)->getX();
+			y = this->getBlackPiece(i)->getY();
+			if (x != -1) {							//If piece is captured, make x = -1
+				boardIntArr[x][y] = this->getBlackPiece(i)->getColor();			//White pieces become -1
+			}
+
+		}
+	}
+
 private:
 	Piece* wAlivePieces[16];
 	Piece* bAlivePieces[16];
