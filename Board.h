@@ -161,6 +161,46 @@ public:
 		}
 	}
 
+	bool checkCheck(bool white) {
+		int x, y;
+		std::string kingPos;
+
+		if (white) {
+			x = this->wAlivePieces[15]->getX();
+			y = this->wAlivePieces[15]->getY();
+			
+			kingPos += std::to_string(x);
+			kingPos += std::to_string(y);
+
+
+			for (int i = 0; i < 16; i++) {
+				for (const auto& s : this->bAlivePieces[i]->returnMoves()) {
+					if (s == kingPos) {												//Someone is currently targeting the white king
+						return true;
+					}
+				}
+			}
+		}
+		else {
+			x = this->bAlivePieces[15]->getX();
+			y = this->bAlivePieces[15]->getY();
+
+			kingPos += std::to_string(x);
+			kingPos += std::to_string(y);
+
+
+			for (int i = 0; i < 16; i++) {
+				for (const auto& s : this->wAlivePieces[i]->returnMoves()) {
+					if (s == kingPos) {												//Someone is currently targeting the black king
+						return true;
+					}
+				}
+			}
+		}
+
+		return false;
+	}
+
 private:
 	Piece* wAlivePieces[16];
 	Piece* bAlivePieces[16];

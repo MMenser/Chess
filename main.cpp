@@ -55,7 +55,12 @@ int main(void) {
 		for (int i = 0; i < 16; i++) {
 			board.getBlackPiece(i)->updateLegalMoves(boardIntArr);
 		}
+		white = false;
 		board.chooseMove(white);
+
+
+
+
 
 		gameEnd = true;
 		
