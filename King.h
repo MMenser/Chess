@@ -14,7 +14,7 @@ public:
 		this->moves.clear();
 
 		std::string move;
-		int moveCheck = 0, yMoveCheck;
+		int moveCheck = 0, yMoveCheck = 0;
 
 
 		if(color == 1)
@@ -22,26 +22,34 @@ public:
 
 			/////           This is Up Down moves   /////////////
 			moveCheck = this->x + 1;													    //one down 
-			if (moveCheck < 8 && board[this->x + 1][this->y] == 0 ) {
-				move = (this->x + 1) + "," + this->y;
+			move = "";
+			if (moveCheck < 8 && board[this->x + 1][this->y] <= 0 ) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(this->y);
 				this->moves.push_back(move);
 			}
 			moveCheck = this->x - 1;													    //one up 
-			if (moveCheck >= 0 && board[this->x - 1][this->y] == 0) {
-				move = (this->x - 1) + "," + this->y;
+			move = "";
+			if (moveCheck >= 0 && board[this->x - 1][this->y] <= 0) {
+				move += std::to_string(moveCheck);
+				move += std::to_string(this->y);
 				this->moves.push_back(move);
 			}
 			
 			//////          This is Left Right moves   ////////////
 			
 			moveCheck = this->y - 1;													    //one left
-			if (moveCheck >= 0 && board[this->x ][this->y-1] == 0) {
-				move = (this->x) + "," + (this->y -1);
+			move = "";
+			if (moveCheck >= 0 && board[this->x ][this->y-1] <= 0) {
+				move += std::to_string(this->x);
+				move += std::to_string(moveCheck);
 				this->moves.push_back(move);
 			}
 			moveCheck = this->y + 1;													    //one right
-			if (moveCheck < 8 && board[this->x][this->y+1] == 0) {
-				move = (this->x) + "," + (this->y + 1);
+			move = "";
+			if (moveCheck < 8 && board[this->x][this->y+1] <= 0) {
+				move += std::to_string(this->x);
+				move += std::to_string(moveCheck);
 				this->moves.push_back(move);
 			}
 
@@ -51,15 +59,19 @@ public:
 
 			moveCheck - this->x + 1;
 			yMoveCheck = this->y + 1;
-			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] != 0) {    //right down diaganol
-				move = moveCheck + "," + yMoveCheck;
+			move = "";
+			if (moveCheck < 8 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] <= 0) {    //right down diaganol
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 
 			moveCheck - this->x - 1;
 			yMoveCheck = this->y + 1;
-			if (moveCheck >= 0 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] != 0) {    //right up diaganol
-				move = moveCheck + "," + yMoveCheck;
+			move = "";
+			if (moveCheck >= 0 && yMoveCheck < 8 && board[moveCheck][yMoveCheck] <= 0) {    //right up diaganol
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 
@@ -68,18 +80,22 @@ public:
 
 			moveCheck = this->x - 1;
 			yMoveCheck = this->y - 1;
-			if (moveCheck >= 0  && yMoveCheck >= 0 && board[moveCheck][yMoveCheck] != 0) {    //left up diaganol
-				move = moveCheck + "," + yMoveCheck;
+			move = "";
+			if (moveCheck >= 0  && yMoveCheck >= 0 && board[moveCheck][yMoveCheck] <= 0) {    //left up diaganol
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
 			
 			moveCheck - this->x + 1;
 			yMoveCheck = this->y - 1;
-			if (moveCheck < 8 && yMoveCheck >= 0 && board[moveCheck][yMoveCheck] != 0) {    // left down diaganol
-				move = moveCheck + "," + yMoveCheck;
+			move = "";
+			if (moveCheck < 8 && yMoveCheck >= 0 && board[moveCheck][yMoveCheck] <= 0) {    // left down diaganol
+				move += std::to_string(moveCheck);
+				move += std::to_string(yMoveCheck);
 				this->moves.push_back(move);
 			}
-
+			move = "";
 
 		}
 		else

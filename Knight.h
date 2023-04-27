@@ -33,7 +33,7 @@ public:
 		std::string move; 
 
 
-		if (this->color == 0) {			//White
+		if (this->color == -1) {			//White
 			if (isValidPosition(this->x + 2, this->y + 1) && board[this->x + 2][this->y + 1] <= 0) {
 				move += std::to_string(this->x + 2);
 				move += std::to_string(this->y + 1);

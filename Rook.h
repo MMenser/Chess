@@ -10,12 +10,12 @@ public:
 
 	Rook(int newX, int newY, int newColor) : Piece(newX, newY, newColor)
 	{
-		std::string newMove = (this->x) + "," + this->y;
+	/*	std::string newMove = (this->x) + "," + this->y;
 		this->moves.push_back(newMove);
-
+		*/
 
 		calculatePossibleMoves(newX, newY);
-		printMoves();
+		//printMoves();
 		
 		
 	}

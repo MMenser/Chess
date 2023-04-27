@@ -30,7 +30,7 @@ public:
 	virtual void updateLegalMoves(int board[8][8]) {};
 
 	bool targetKing() {
-		return this->canTargetKing;
+		return this->canTargetKing;			
 	}
 
 	bool isValidPosition(int row, int col) {
@@ -68,5 +68,5 @@ public:
 protected:
 	int x, y, color;						//Color: 0 = white, 1 = black
 	std::vector<std::string> moves;
-	bool canTargetKing;
+	bool canTargetKing;						//If king has no moves and a piece targets king - checkmate 
 };

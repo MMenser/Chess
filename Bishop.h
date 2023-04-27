@@ -14,7 +14,7 @@ public:
 		this->moves.push_back(newMove);
 
 		calculatePossibleMoves(newX, newY);
-		printMoves();
+		//printMoves();
 
 	}
 
